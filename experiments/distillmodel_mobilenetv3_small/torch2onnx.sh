@@ -1,0 +1,1 @@
+python ../../tools/torch2onnx.py --work-dir ./

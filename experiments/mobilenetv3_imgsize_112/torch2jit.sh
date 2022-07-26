@@ -1,0 +1,1 @@
+python ../../tools/torch2jit.py --work-dir ./
