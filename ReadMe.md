@@ -26,25 +26,6 @@ tensorboard
 apex
 ```
 
-**How to install apex?**
-
-apex needs to be installed separately.For torch1.10,modify apex/apex/amp/utils.py:
-```
-if cached_x.grad_fn.next_functions[1][0].variable is not x:
-```
-to
-```
-if cached_x.grad_fn.next_functions[0][0].variable is not x:
-```
-
-Then use the following orders to install apex:
-```
-git clone https://github.com/NVIDIA/apex
-cd apex
-pip install -v --no-cache-dir ./
-```
-Using apex to train can reduce video memory usage by 25%-30%, but the training speed will be slower, the trained model has the same performance as not using apex.
-
 # Prepare datasets
 
 If you want to reproduce my pretrained models, you need download koniq10k dataset or other datasets but make sure the folder architecture as follows:
@@ -73,6 +54,25 @@ txt_file: contains 2-column, column one contains the names of image files, colum
 train.txt for training dataset, test.txt for test dataset.
 
 ```
+
+**How to install apex?**
+
+apex needs to be installed separately.For torch1.10,modify apex/apex/amp/utils.py:
+```
+if cached_x.grad_fn.next_functions[1][0].variable is not x:
+```
+to
+```
+if cached_x.grad_fn.next_functions[0][0].variable is not x:
+```
+
+Then use the following orders to install apex:
+```
+git clone https://github.com/NVIDIA/apex
+cd apex
+pip install -v --no-cache-dir ./
+```
+Using apex to train can reduce video memory usage by 25%-30%, but the training speed will be slower, the trained model has the same performance as not using apex.
 
 # Train and test model
 
@@ -146,9 +146,9 @@ You can find more model training details in experiments/distillmodel_mobilenetv3
 
 If you find my work useful in your research, please consider citing:
 ```
-@inproceedings{zjh,
- title={SimpleAICV-IQA},
- author={zjh},
+@inproceedings{huadonq,
+ title={DDP-Pytorch-IQA},
+ author={huadonq},
  year={2022}
 }
 ```
