@@ -129,15 +129,6 @@ You can find more model training details in experiments.
 
 ## Koniq10k training results
 
-**KD loss**
-Paper:https://arxiv.org/abs/1503.02531
-
-**DKD loss**
-Paper:https://arxiv.org/abs/2203.08679
-
-**DML loss**
-Paper:https://arxiv.org/abs/1706.00384
-
 to be continue...
 
 You can find more model training details in experiments/distillmodel_mobilenetv3_small/.
